@@ -1,0 +1,11 @@
+{
+  "name": "Trợ lý tra cứu văn bản tín dụng",
+  "short_name": "Tra cứu văn bản",
+  "description": "Tra cứu quy định từ bộ văn bản đã tải lên",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f6f4",
+  "theme_color": "#861d2b",
+  "icons": [{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

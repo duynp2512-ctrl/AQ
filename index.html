@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#8a1624">
+  <meta name="description" content="Tra cứu nội dung văn bản pháp luật nông nghiệp nông thôn kèm căn cứ đối chiếu, không cần máy chủ AI.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <title>Trợ lý tra cứu văn bản · Ngân hàng & tín dụng</title>
+  <style>
+    :root{color-scheme:light;--wine:#861d2b;--wine2:#641320;--gold:#c6a35b;--ink:#273347;--muted:#6d7889;--bdr:#e7e9ed;--paper:#fff;--bg:#f7f6f4;--shadow:0 15px 38px rgba(48,35,35,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink)}button,textarea,select{font:inherit}button{cursor:pointer}a{color:var(--wine)}
+    header{background:linear-gradient(100deg,var(--wine2),#a12b38 82%);color:#fff;border-bottom:4px solid var(--gold)}
+    .topbar{max-width:1330px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 25px;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}.brandIcon{flex:none;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(255,231,178,.6);border-radius:14px;background:rgba(255,255,255,.1);font-size:25px}.brand h1{font-size:18px;font-weight:780;letter-spacing:.2px;margin:0 0 3px}.brand small{color:#f6d8d5;display:block;font-size:12px}.topbadge{border:1px solid rgba(255,255,255,.36);color:#fff3dc;font-size:12px;border-radius:30px;padding:7px 11px;white-space:nowrap}
+    main{max-width:1330px;padding:27px 25px 36px;margin:auto}.headline{display:flex;gap:30px;justify-content:space-between;align-items:flex-start;margin-bottom:23px}.headline h2{font-size:clamp(23px,2.5vw,34px);font-weight:800;letter-spacing:-.6px;line-height:1.2;margin:0 0 9px}.headline p{max-width:760px;color:var(--muted);margin:0;line-height:1.6;font-size:14px}.counter{display:flex;gap:10px}.metric{background:#fff;border:1px solid var(--bdr);border-radius:14px;min-width:93px;text-align:center;padding:12px}.metric b{font-size:23px;color:var(--wine);display:block}.metric small{font-size:11px;color:var(--muted)}
+    .layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(330px,.9fr);gap:21px;align-items:start}.panel{background:var(--paper);border:1px solid var(--bdr);border-radius:19px;box-shadow:var(--shadow);overflow:hidden}.panelTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid var(--bdr);padding:15px 20px}.panelTitle strong{font-size:15px}.subtle{font-size:12px;color:var(--muted)}
+    .chatWrap{height:480px;overflow-y:auto;padding:22px 20px 18px;scroll-behavior:smooth;background:radial-gradient(circle at 95% 0%,#fff8f4 0,transparent 40%),#fff}.welcome{max-width:610px;padding:20px;background:linear-gradient(120deg,#faf5f2,#fff);border:1px solid #f3e7df;border-radius:15px;margin-bottom:18px}.welcome b{font-size:17px}.welcome p{font-size:13px;color:#586575;line-height:1.6;margin:8px 0 0}.welcome em{font-style:normal;color:#7e3741;font-weight:650}
+    .suggest{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 5px}.chip{border:1px solid #e8dde0;background:#fff;color:#7d2430;padding:9px 11px;border-radius:24px;text-align:left;font-size:12px;line-height:1.3}.chip:hover{background:#fff1f0}
+    .msg{display:flex;flex-direction:column;margin:17px 0;gap:6px}.msg.user{align-items:flex-end}.bubble{border-radius:15px;padding:13px 16px;max-width:94%;white-space:pre-wrap;line-height:1.65;font-size:14px}.msg.user .bubble{background:#8c2330;color:#fff;border-bottom-right-radius:4px}.msg.bot .bubble{background:#f7f7f8;border:1px solid #ebedf0;border-bottom-left-radius:4px}.msg .role{color:#77808e;font-size:11px;margin:0 3px}.msg.bot .bubble b{color:#7f2030}.sourceMini{display:flex;flex-wrap:wrap;gap:6px;padding:2px 0}.sourceMini button{background:#fff;color:#7f2533;border:1px solid #ead7d9;border-radius:7px;font-size:11px;padding:5px 8px}.answerText{white-space:pre-wrap}.caution{font-size:12px;line-height:1.5;color:#7b5a2e;border-top:1px solid #f0e2cb;margin-top:11px;padding-top:9px}
+    .composer{padding:15px 18px 19px;border-top:1px solid var(--bdr);background:#fff}.filterrow{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-bottom:10px}.filterrow label{font-size:12px;color:var(--muted)}select{width:100%;max-width:360px;border:1px solid #e1e3e7;background:#fff;border-radius:9px;padding:8px 11px;color:#3e4756;font-size:12px;outline:none}.inputrow{display:flex;gap:10px;align-items:stretch}.inputrow textarea{flex:1;min-width:0;min-height:75px;max-height:200px;resize:vertical;border:1px solid #d9dce3;border-radius:12px;padding:12px 14px;outline:none;line-height:1.5;font-size:14px}.inputrow textarea:focus{border-color:#a74a57;box-shadow:0 0 0 3px rgba(134,29,43,.09)}.send{background:var(--wine);color:#fff;border:0;padding:0 20px;border-radius:11px;font-weight:700;white-space:nowrap}.send:hover{background:var(--wine2)}.helper{display:flex;justify-content:space-between;gap:8px;color:#85909e;font-size:11px;margin-top:9px}.helper button{background:transparent;border:0;color:#8b2c37;font-size:11px;padding:0}
+    .rightBody{padding:13px 14px 17px;max-height:735px;overflow-y:auto}.noResult{padding:23px 10px;color:#7b8592;text-align:center;font-size:13px;line-height:1.7}.result{border:1px solid #ece8e8;border-radius:13px;overflow:hidden;margin-bottom:12px;background:#fff}.resultHead{padding:12px 13px;background:#fcfaf9;cursor:pointer;display:flex;gap:10px;justify-content:space-between;align-items:flex-start}.resultHead:hover{background:#faf5f4}.resultHead h3{font-size:13px;margin:2px 0 6px;color:#68202c;line-height:1.35}.resultHead p{font-size:11px;line-height:1.5;margin:0;color:#6d7686}.resultHead .num{background:#f0e1dd;border-radius:8px;padding:5px 8px;color:#77202b;font-weight:800;font-size:12px}.resultBody{padding:14px;display:none;border-top:1px solid #f0eded}.result.open .resultBody{display:block}.quote{white-space:pre-wrap;font-size:12px;line-height:1.8;max-height:330px;overflow-y:auto;color:#3c4a57}.resultFooter{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:13px}.download{display:inline-flex;gap:5px;font-size:11px;font-weight:700;color:var(--wine);padding:8px 10px;border-radius:8px;background:#f9efed;text-decoration:none}.copyRef{border:1px solid var(--bdr);padding:7px 10px;border-radius:8px;background:#fff;color:#546173;font-size:11px}
+    .note{margin-top:19px;background:#fffdf7;border:1px solid #ece2cc;border-left:4px solid var(--gold);padding:14px 18px;border-radius:9px;font-size:12px;line-height:1.7;color:#645a46}.docList{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.docPill{font-size:11px;line-height:1.4;padding:7px 10px;border:1px solid #e0dcd9;background:#fff;border-radius:8px;color:#6b6270}.footer{margin-top:20px;text-align:center;color:#8b929b;font-size:11px;line-height:1.6}
+    @media(max-width:920px){.layout{grid-template-columns:1fr}.rightBody{max-height:420px}.headline{align-items:flex-start}.chatWrap{height:440px}}
+    @media(max-width:620px){.topbar{padding:14px 16px}.brand h1{font-size:14px}.brandIcon{width:40px;height:40px}.topbadge{display:none}main{padding:21px 12px 30px}.headline{flex-direction:column;gap:14px}.counter{width:100%}.metric{flex:1}.chatWrap{height:480px;padding:15px 13px}.panelTitle{padding:13px 14px}.composer{padding:13px}.inputrow{flex-direction:column}.inputrow textarea{min-height:75px}.send{padding:12px}.filterrow{align-items:stretch;flex-direction:column;gap:5px}select{max-width:100%}.bubble{max-width:100%}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <div class="brand"><div class="brandIcon" aria-hidden="true">⚖</div><div><h1>TRỢ LÝ TRA CỨU VĂN BẢN</h1><small>Chính sách tín dụng nông nghiệp, nông thôn · Tra cứu có dẫn nguồn</small></div></div>
+    <div class="topbadge">● Dữ liệu lưu ngay trên website</div>
+  </div>
+</header>
+<main>
+  <div class="headline">
+    <div><h2>Hỏi văn bản, nhận ngay căn cứ 📚</h2><p>Nhập câu hỏi theo ngôn ngữ tự nhiên. Hệ thống tìm những đoạn phù hợp trong bộ văn bản anh tải lên, trình bày nội dung gốc và chỉ rõ nơi tra cứu.</p></div>
+    <div class="counter"><div class="metric"><b id="docCount">–</b><small>Văn bản</small></div><div class="metric"><b id="sectionCount">–</b><small>Đoạn tra cứu</small></div></div>
+  </div>
+  <div class="layout">
+    <section class="panel" aria-label="Hỏi đáp văn bản">
+      <div class="panelTitle"><strong>💬 Hỏi đáp từ dữ liệu văn bản</strong><span class="subtle">Không cần đăng nhập • Không gửi câu hỏi lên máy chủ AI</span></div>
+      <div id="chat" class="chatWrap" aria-live="polite">
+        <div id="welcome" class="welcome"><b>Xin chào! Tôi có thể tìm gì cho anh?</b><p>Ví dụ: hạn mức cho vay không có tài sản bảo đảm, cơ cấu lại thời hạn trả nợ, điều kiện khoanh nợ, trách nhiệm báo cáo... Hệ thống <em>trích dẫn nội dung trong tài liệu</em>, không tự đặt ra quy định.</p></div>
+        <div class="suggest" id="suggestions">
+          <button class="chip" type="button" data-q="Mức cho vay không có tài sản bảo đảm đối với cá nhân, hộ kinh doanh và hợp tác xã là bao nhiêu?">💰 Hạn mức vay không có tài sản bảo đảm</button>
+          <button class="chip" type="button" data-q="Cơ cấu lại thời hạn trả nợ tối đa bao nhiêu tháng khi gặp bất khả kháng?">📅 Cơ cấu thời hạn trả nợ</button>
+          <button class="chip" type="button" data-q="Thủ tục và hồ sơ đề nghị khoanh nợ gồm những gì?">📑 Hồ sơ khoanh nợ</button>
+          <button class="chip" type="button" data-q="Thông tư 29/2025/TT-NHNN có hiệu lực từ ngày nào?">🔍 Hiệu lực Thông tư 29</button>
+        </div>
+      </div>
+      <div class="composer">
+        <div class="filterrow"><label for="docFilter">Phạm vi tìm kiếm</label><select id="docFilter"><option value="all">Tất cả văn bản đã tải lên</option></select></div>
+        <div class="inputrow"><textarea id="question" placeholder="Ví dụ: Hộ kinh doanh được xem xét vay không có tài sản bảo đảm tối đa bao nhiêu tiền?" maxlength="1500" aria-label="Câu hỏi tra cứu"></textarea><button id="ask" class="send" type="button">Tra cứu ↗</button></div>
+        <div class="helper"><span>Nhấn Enter để tra cứu · Shift + Enter để xuống dòng</span><button type="button" id="clear">Xóa hội thoại</button></div>
+      </div>
+    </section>
+    <aside class="panel" aria-label="Nguồn tra cứu">
+      <div class="panelTitle"><strong>📄 Nguồn đối chiếu</strong><span class="subtle" id="resultCount">Chưa tìm kiếm</span></div>
+      <div class="rightBody" id="results"><div class="noResult">Khi anh gửi câu hỏi, các điều khoản và đoạn văn bản liên quan sẽ xuất hiện tại đây.<br>Nhấn vào từng nguồn để xem toàn văn đoạn tra cứu.</div></div>
+    </aside>
+  </div>
+  <div class="note"><strong>⚠ Lưu ý về độ chính xác:</strong> Đây là công cụ <strong>tra cứu trích xuất, không phải AI tạo sinh</strong>. Khi các văn bản có nội dung sửa đổi, hệ thống ưu tiên văn bản mới trong tập dữ liệu, nhưng chưa tự xác định đầy đủ tình trạng hiệu lực hoặc quy định nội bộ của từng ngân hàng. Hãy đối chiếu văn bản gốc trước khi áp dụng. Dữ liệu công khai trên GitHub Pages sẽ được mọi người có đường dẫn truy cập.</div>
+  <div class="docList" id="docList"></div>
+  <div class="footer">Phiên bản tra cứu tĩnh · Có thể triển khai trên GitHub Pages · Cập nhật thêm file .docx qua quy trình tự động</div>
+</main>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+<script>
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
+</script>
+</body>
+</html>
